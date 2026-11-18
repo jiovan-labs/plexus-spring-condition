@@ -37,5 +37,10 @@ import com.jiovan.plexus.spring.condition.evaluator.OnMissingAnyFilesCondition;
 @Conditional(value = OnMissingAnyFilesCondition.class)
 @SuppressWarnings("unused")
 public @interface ConditionalOnMissingAnyFiles {
+    /**
+     * The nested {@link ConditionalOnMissingFile} conditions of which at least one must match.
+     *
+     * @return the nested conditions to evaluate
+     */
     ConditionalOnMissingFile[] value();
 }

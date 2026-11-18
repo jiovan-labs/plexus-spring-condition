@@ -41,6 +41,13 @@ import com.jiovan.plexus.common.toolkit.util.StringUtilsWraps;
  */
 @SuppressWarnings("unused")
 public abstract class ConditionPropertyUtils {
+    /**
+     * Resolves property names by combining the prefix and name attributes of the given annotation.
+     *
+     * @param metadata the metadata of the annotated class or method
+     * @param condition the annotation declaring the prefix and name attributes
+     * @return the combined property names, or {@code null} if no attributes are present
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static List<String> getCompositePrefixNames(@Nullable AnnotatedTypeMetadata metadata, @Nullable Class<? extends Annotation> condition) {

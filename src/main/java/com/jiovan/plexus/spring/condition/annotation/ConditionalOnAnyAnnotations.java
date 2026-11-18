@@ -37,5 +37,10 @@ import com.jiovan.plexus.spring.condition.evaluator.OnAnyAnnotationsCondition;
 @Conditional(value = OnAnyAnnotationsCondition.class)
 @SuppressWarnings("unused")
 public @interface ConditionalOnAnyAnnotations {
+    /**
+     * The nested {@link ConditionalOnAnnotation} conditions of which at least one must match.
+     *
+     * @return the nested conditions to evaluate
+     */
     ConditionalOnAnnotation[] value();
 }

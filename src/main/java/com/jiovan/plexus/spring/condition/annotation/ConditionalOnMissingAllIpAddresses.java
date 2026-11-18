@@ -37,5 +37,10 @@ import com.jiovan.plexus.spring.condition.evaluator.OnMissingAllIpAddressesCondi
 @Conditional(value = OnMissingAllIpAddressesCondition.class)
 @SuppressWarnings("unused")
 public @interface ConditionalOnMissingAllIpAddresses {
+    /**
+     * The nested {@link ConditionalOnMissingIpAddress} conditions that must all match.
+     *
+     * @return the nested conditions to evaluate
+     */
     ConditionalOnMissingIpAddress[] value();
 }

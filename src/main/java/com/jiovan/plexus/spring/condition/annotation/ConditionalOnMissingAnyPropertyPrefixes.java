@@ -37,5 +37,10 @@ import com.jiovan.plexus.spring.condition.evaluator.OnMissingAnyPropertyPrefixes
 @Conditional(value = OnMissingAnyPropertyPrefixesCondition.class)
 @SuppressWarnings("unused")
 public @interface ConditionalOnMissingAnyPropertyPrefixes {
+    /**
+     * The nested {@link ConditionalOnMissingPropertyPrefix} conditions of which at least one must match.
+     *
+     * @return the nested conditions to evaluate
+     */
     ConditionalOnMissingPropertyPrefix[] value();
 }

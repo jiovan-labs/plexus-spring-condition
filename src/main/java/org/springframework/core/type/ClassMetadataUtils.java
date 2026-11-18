@@ -31,18 +31,36 @@ import jakarta.annotation.Nullable;
  */
 @SuppressWarnings({"unused", "BooleanMethodIsAlwaysInverted", "UnusedReturnValue"})
 public abstract class ClassMetadataUtils {
+    /**
+     * Introspects the given class and returns its standard annotation metadata.
+     *
+     * @param introspectedClass the class to introspect
+     * @return the standard annotation metadata, or {@code null} if introspection does not produce it
+     */
     @Nullable
     public static StandardAnnotationMetadata createStandardAnnotationMetadata(@Nonnull Class<?> introspectedClass) {
         AnnotationMetadata metadata = AnnotationMetadata.introspect(introspectedClass);
         return (metadata instanceof StandardAnnotationMetadata instance) ? instance : null;
     }
 
+    /**
+     * Creates standard class metadata for the given class.
+     *
+     * @param introspectedClass the class to introspect
+     * @return the newly created class metadata
+     */
     @Nonnull
     @SuppressWarnings("deprecation")
     public static StandardClassMetadata createStandardMetadata(@Nonnull Class<?> introspectedClass) {
         return new StandardClassMetadata(introspectedClass);
     }
 
+    /**
+     * Clones the given metadata by re-creating it from the introspected class.
+     *
+     * @param metadata the metadata to clone
+     * @return the cloned metadata, or {@code null} if the metadata type is not supported
+     */
     @Nullable
     public static ClassMetadata cloneMetadata(@Nonnull ClassMetadata metadata) {
         if (metadata instanceof StandardAnnotationMetadata instance) {

@@ -39,17 +39,44 @@ import org.springframework.core.type.StandardMethodMetadataUtils;
  */
 @SuppressWarnings({"unused", "BooleanMethodIsAlwaysInverted", "UnusedReturnValue"})
 public abstract class MethodMetadataUtils {
+    /**
+     * Creates simple method metadata from the supplied structure.
+     *
+     * @param methodName the method name
+     * @param access the access flags
+     * @param declaringClassName the name of the declaring class
+     * @param returnTypeName the name of the return type
+     * @param source the source object of the metadata
+     * @param annotations the merged annotations to apply
+     * @return the newly created method metadata
+     */
     @Nonnull
     public static MethodMetadata createSimpleMetadata(@Nonnull String methodName, int access, @Nonnull String declaringClassName,
         @Nonnull String returnTypeName, @Nonnull Object source, @Nonnull MergedAnnotations annotations) {
         return new SimpleMethodMetadata(methodName, access, declaringClassName, returnTypeName, source, annotations);
     }
 
+    /**
+     * Creates a copy of the given method metadata with its annotations replaced by the supplied ones.
+     *
+     * @param metadata the original method metadata
+     * @param annotations the merged annotations to apply
+     * @return the copied method metadata with the new annotations, or {@code null} if it cannot be created
+     * @throws IllegalAccessException if a required internal field cannot be accessed
+     */
     @Nullable
     public static MethodMetadata renewMetadataAnnotation(@Nonnull MethodMetadata metadata, @Nonnull MergedAnnotation<?>... annotations) throws IllegalAccessException {
         return renewMetadataAnnotation(metadata, MergedAnnotations.of(Arrays.asList(annotations)));
     }
 
+    /**
+     * Creates a copy of the given method metadata with its annotations replaced by the supplied ones.
+     *
+     * @param metadata the original method metadata
+     * @param annotations the merged annotations to apply
+     * @return the copied method metadata with the new annotations, or {@code null} if it cannot be created
+     * @throws IllegalAccessException if a required internal field cannot be accessed
+     */
     @Nullable
     public static MethodMetadata renewMetadataAnnotation(@Nonnull MethodMetadata metadata, @Nonnull MergedAnnotations annotations) throws IllegalAccessException {
         if (metadata instanceof SimpleMethodMetadata) {
@@ -65,11 +92,25 @@ public abstract class MethodMetadataUtils {
         return null;
     }
 
+    /**
+     * Creates a copy of the given method metadata with its annotations replaced by the supplied ones, returning {@code null} if reflection fails.
+     *
+     * @param metadata the original method metadata
+     * @param annotations the merged annotations to apply
+     * @return the copied method metadata with the new annotations, or {@code null} if it cannot be created
+     */
     @Nullable
     public static MethodMetadata renewMetadataAnnotationQuietly(@Nonnull MethodMetadata metadata, @Nonnull MergedAnnotation<?>... annotations) {
         return renewMetadataAnnotationQuietly(metadata, MergedAnnotations.of(Arrays.asList(annotations)));
     }
 
+    /**
+     * Creates a copy of the given method metadata with its annotations replaced by the supplied ones, returning {@code null} if reflection fails.
+     *
+     * @param metadata the original method metadata
+     * @param annotations the merged annotations to apply
+     * @return the copied method metadata with the new annotations, or {@code null} if it cannot be created
+     */
     @Nullable
     public static MethodMetadata renewMetadataAnnotationQuietly(@Nonnull MethodMetadata metadata, @Nonnull MergedAnnotations annotations) {
         try {

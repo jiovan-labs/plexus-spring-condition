@@ -38,5 +38,10 @@ import org.springframework.context.annotation.Conditional;
 @Conditional(value = OnAnyBeansCondition.class)
 @SuppressWarnings("unused")
 public @interface ConditionalOnAnyBeans {
+    /**
+     * The nested {@link ConditionalOnBean} conditions of which at least one must match.
+     *
+     * @return the nested conditions to evaluate
+     */
     ConditionalOnBean[] value();
 }

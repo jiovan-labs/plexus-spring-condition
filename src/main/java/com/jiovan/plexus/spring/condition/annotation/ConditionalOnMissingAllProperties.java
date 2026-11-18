@@ -37,5 +37,10 @@ import com.jiovan.plexus.spring.condition.evaluator.OnMissingAllPropertiesCondit
 @Conditional(value = OnMissingAllPropertiesCondition.class)
 @SuppressWarnings("unused")
 public @interface ConditionalOnMissingAllProperties {
+    /**
+     * The nested {@link ConditionalOnMissingProperty} conditions that must all match.
+     *
+     * @return the nested conditions to evaluate
+     */
     ConditionalOnMissingProperty[] value();
 }

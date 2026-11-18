@@ -45,6 +45,13 @@ import com.jiovan.plexus.spring.condition.util.ConditionBecauseUtils;
 public class OnMissingPackageCondition extends SpringBootCondition {
     private static final Class<? extends Annotation> annotation = ConditionalOnMissingPackage.class;
 
+    /**
+     * Determines whether the condition declared by {@link ConditionalOnMissingPackage} matches the given metadata.
+     *
+     * @param context the condition context providing the environment and bean factory
+     * @param metadata the metadata of the annotated class or method being evaluated
+     * @return the outcome of the condition evaluation
+     */
     @Nonnull
     @Override
     @SuppressWarnings("DuplicatedCode")

@@ -32,6 +32,13 @@ import org.springframework.util.CollectionUtils;
  */
 @SuppressWarnings("unused")
 public class AbstractMatchAllCondition<W extends Annotation, P extends Annotation> extends AbstractArrayWrapCondition<W, P> {
+    /**
+     * Matches only when all nested conditions match.
+     *
+     * @param matched the messages of the nested conditions that matched
+     * @param unmatched the messages of the nested conditions that did not match
+     * @return a match outcome when nothing is unmatched, otherwise a no-match outcome
+     */
     @Nonnull
     @Override
     protected ConditionOutcome determineOutcome(@Nonnull List<ConditionMessage> matched, @Nonnull List<ConditionMessage> unmatched) {

@@ -37,5 +37,10 @@ import com.jiovan.plexus.spring.condition.evaluator.OnAllLibrariesCondition;
 @Conditional(value = OnAllLibrariesCondition.class)
 @SuppressWarnings("unused")
 public @interface ConditionalOnAllLibraries {
+    /**
+     * The nested {@link ConditionalOnLibrary} conditions that must all match.
+     *
+     * @return the nested conditions to evaluate
+     */
     ConditionalOnLibrary[] value();
 }

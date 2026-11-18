@@ -35,6 +35,15 @@ import com.jiovan.plexus.common.toolkit.util.StringUtilsWraps;
  */
 @SuppressWarnings("unused")
 public abstract class ConditionIpAddressUtils {
+    /**
+     * Compares the local IP address with an expected value, optionally as a regular expression.
+     *
+     * @param conditionClass the annotation class declaring the condition
+     * @param attributeName the name of the annotation attribute being checked
+     * @param ipAddress the expected IP address or regular expression
+     * @param regex whether the expected value is a regular expression
+     * @return an outcome indicating whether the local IP address matches the expected value
+     */
     @Nonnull
     public static ConditionOutcome matchIpAddress(@Nonnull Class<? extends Annotation> conditionClass, @Nonnull String attributeName, @Nonnull String ipAddress, boolean regex) {
         ConditionMessage.Builder builder = ConditionMessage.forCondition(conditionClass);

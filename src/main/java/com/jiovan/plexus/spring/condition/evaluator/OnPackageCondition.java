@@ -45,6 +45,13 @@ import com.jiovan.plexus.spring.condition.util.ConditionBecauseUtils;
 public class OnPackageCondition extends SpringBootCondition {
     private static final Class<? extends Annotation> annotation = ConditionalOnPackage.class;
 
+    /**
+     * Determines whether the condition declared by {@link ConditionalOnPackage} matches the given metadata.
+     *
+     * @param context the condition context providing the environment and bean factory
+     * @param metadata the metadata of the annotated class or method being evaluated
+     * @return the outcome of the condition evaluation
+     */
     @Nonnull
     @Override
     @SuppressWarnings("DuplicatedCode")

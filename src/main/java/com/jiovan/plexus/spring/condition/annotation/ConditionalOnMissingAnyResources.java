@@ -37,5 +37,10 @@ import com.jiovan.plexus.spring.condition.evaluator.OnMissingAnyResourcesConditi
 @Conditional(value = OnMissingAnyResourcesCondition.class)
 @SuppressWarnings("unused")
 public @interface ConditionalOnMissingAnyResources {
+    /**
+     * The nested {@link ConditionalOnMissingResource} conditions of which at least one must match.
+     *
+     * @return the nested conditions to evaluate
+     */
     ConditionalOnMissingResource[] value();
 }

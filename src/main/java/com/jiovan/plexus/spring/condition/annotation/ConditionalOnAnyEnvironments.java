@@ -37,5 +37,10 @@ import com.jiovan.plexus.spring.condition.evaluator.OnAnyEnvironmentsCondition;
 @Conditional(value = OnAnyEnvironmentsCondition.class)
 @SuppressWarnings("unused")
 public @interface ConditionalOnAnyEnvironments {
+    /**
+     * The nested {@link ConditionalOnEnvironment} conditions of which at least one must match.
+     *
+     * @return the nested conditions to evaluate
+     */
     ConditionalOnEnvironment[] value();
 }

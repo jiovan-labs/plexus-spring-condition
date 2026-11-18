@@ -50,6 +50,13 @@ import lombok.extern.slf4j.Slf4j;
 public class OnMissingLibraryCondition extends SpringBootCondition {
     private static final Class<? extends Annotation> annotation = ConditionalOnMissingLibrary.class;
 
+    /**
+     * Determines whether the condition declared by {@link ConditionalOnMissingLibrary} matches the given metadata.
+     *
+     * @param context the condition context providing the environment and bean factory
+     * @param metadata the metadata of the annotated class or method being evaluated
+     * @return the outcome of the condition evaluation
+     */
     @Nonnull
     @Override
     @SuppressWarnings({"DuplicatedCode", "DataFlowIssue"})

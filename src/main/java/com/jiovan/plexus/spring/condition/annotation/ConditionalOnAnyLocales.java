@@ -37,5 +37,10 @@ import com.jiovan.plexus.spring.condition.evaluator.OnAnyLocalesCondition;
 @Conditional(value = OnAnyLocalesCondition.class)
 @SuppressWarnings("unused")
 public @interface ConditionalOnAnyLocales {
+    /**
+     * The nested {@link ConditionalOnLocale} conditions of which at least one must match.
+     *
+     * @return the nested conditions to evaluate
+     */
     ConditionalOnLocale[] value();
 }

@@ -34,6 +34,16 @@ import com.jiovan.plexus.common.toolkit.util.StringUtilsWraps;
  */
 @SuppressWarnings("unused")
 public abstract class ConditionHostnameUtils {
+    /**
+     * Compares the local host name with an expected value, optionally as a regular expression.
+     *
+     * @param conditionClass the annotation class declaring the condition
+     * @param attributeName the name of the annotation attribute being checked
+     * @param hostname the expected host name or regular expression
+     * @param caseSensitive whether the comparison is case sensitive
+     * @param regex whether the expected value is a regular expression
+     * @return an outcome indicating whether the local host name matches the expected value
+     */
     @Nonnull
     @SuppressWarnings("DuplicatedCode")
     public static ConditionOutcome matchHostname(@Nonnull Class<? extends Annotation> conditionClass, @Nonnull String attributeName, @Nonnull String hostname, boolean caseSensitive, boolean regex) {

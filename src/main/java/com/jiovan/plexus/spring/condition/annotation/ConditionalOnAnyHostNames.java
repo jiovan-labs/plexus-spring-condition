@@ -37,5 +37,10 @@ import com.jiovan.plexus.spring.condition.evaluator.OnAnyHostNamesCondition;
 @Conditional(value = OnAnyHostNamesCondition.class)
 @SuppressWarnings("unused")
 public @interface ConditionalOnAnyHostNames {
+    /**
+     * The nested {@link ConditionalOnHostname} conditions of which at least one must match.
+     *
+     * @return the nested conditions to evaluate
+     */
     ConditionalOnHostname[] value();
 }

@@ -40,6 +40,13 @@ import com.jiovan.plexus.spring.condition.annotation.ConditionalOnMacOs;
 public class OnMacOsCondition extends SpringBootCondition {
     private static final Class<? extends Annotation> annotation = ConditionalOnMacOs.class;
 
+    /**
+     * Determines whether the condition declared by {@link ConditionalOnMacOs} matches the given metadata.
+     *
+     * @param context the condition context providing the environment and bean factory
+     * @param metadata the metadata of the annotated class or method being evaluated
+     * @return the outcome of the condition evaluation
+     */
     @Nonnull
     @Override
     public ConditionOutcome getMatchOutcome(@Nonnull ConditionContext context, @Nonnull AnnotatedTypeMetadata metadata) {

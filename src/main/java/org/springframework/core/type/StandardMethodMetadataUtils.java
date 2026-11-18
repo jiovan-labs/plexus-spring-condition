@@ -30,6 +30,13 @@ import jakarta.annotation.Nonnull;
  */
 @SuppressWarnings({"unused", "BooleanMethodIsAlwaysInverted", "UnusedReturnValue"})
 public abstract class StandardMethodMetadataUtils {
+    /**
+     * Creates standard method metadata for the given reflective method.
+     *
+     * @param introspectedMethod the method to introspect
+     * @param nestedAnnotationsAsMap whether nested annotations are exposed as maps
+     * @return the newly created method metadata
+     */
     @Nonnull
     public static StandardMethodMetadata createStandardMetadata(@Nonnull Method introspectedMethod, boolean nestedAnnotationsAsMap) {
         return new StandardMethodMetadata(introspectedMethod, nestedAnnotationsAsMap);

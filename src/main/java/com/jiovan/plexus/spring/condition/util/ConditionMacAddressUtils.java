@@ -35,6 +35,15 @@ import com.jiovan.plexus.common.toolkit.util.StringUtilsWraps;
  */
 @SuppressWarnings("unused")
 public abstract class ConditionMacAddressUtils {
+    /**
+     * Compares the local MAC addresses with an expected value, optionally as a regular expression.
+     *
+     * @param conditionClass the annotation class declaring the condition
+     * @param attributeName the name of the annotation attribute being checked
+     * @param macAddress the expected MAC address or regular expression
+     * @param regex whether the expected value is a regular expression
+     * @return an outcome indicating whether any local MAC address matches the expected value
+     */
     @Nonnull
     public static ConditionOutcome matchMacAddress(@Nonnull Class<? extends Annotation> conditionClass, @Nonnull String attributeName, @Nonnull String macAddress, boolean regex) {
         ConditionMessage.Builder builder = ConditionMessage.forCondition(conditionClass);

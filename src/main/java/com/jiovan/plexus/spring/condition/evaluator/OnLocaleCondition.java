@@ -47,6 +47,13 @@ import lombok.extern.slf4j.Slf4j;
 public class OnLocaleCondition extends SpringBootCondition {
     private static final Class<? extends Annotation> annotation = ConditionalOnLocale.class;
 
+    /**
+     * Determines whether the condition declared by {@link ConditionalOnLocale} matches the given metadata.
+     *
+     * @param context the condition context providing the environment and bean factory
+     * @param metadata the metadata of the annotated class or method being evaluated
+     * @return the outcome of the condition evaluation
+     */
     @Nonnull
     @Override
     public ConditionOutcome getMatchOutcome(@Nonnull ConditionContext context, @Nonnull AnnotatedTypeMetadata metadata) {

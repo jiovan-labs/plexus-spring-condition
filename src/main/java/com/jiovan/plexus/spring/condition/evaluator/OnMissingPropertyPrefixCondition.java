@@ -44,6 +44,13 @@ import com.jiovan.plexus.spring.toolkit.util.PropertyBinderWraps;
 public class OnMissingPropertyPrefixCondition extends SpringBootCondition {
     private static final Class<? extends Annotation> annotation = ConditionalOnMissingPropertyPrefix.class;
 
+    /**
+     * Determines whether the condition declared by {@link ConditionalOnMissingPropertyPrefix} matches the given metadata.
+     *
+     * @param context the condition context providing the environment and bean factory
+     * @param metadata the metadata of the annotated class or method being evaluated
+     * @return the outcome of the condition evaluation
+     */
     @Nonnull
     @Override
     public ConditionOutcome getMatchOutcome(@Nonnull ConditionContext context, @Nonnull AnnotatedTypeMetadata metadata) {

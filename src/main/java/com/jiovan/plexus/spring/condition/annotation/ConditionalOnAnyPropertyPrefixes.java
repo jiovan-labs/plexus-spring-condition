@@ -37,5 +37,10 @@ import com.jiovan.plexus.spring.condition.evaluator.OnAnyPropertyPrefixesConditi
 @Conditional(value = OnAnyPropertyPrefixesCondition.class)
 @SuppressWarnings("unused")
 public @interface ConditionalOnAnyPropertyPrefixes {
+    /**
+     * The nested {@link ConditionalOnPropertyPrefix} conditions of which at least one must match.
+     *
+     * @return the nested conditions to evaluate
+     */
     ConditionalOnPropertyPrefix[] value();
 }

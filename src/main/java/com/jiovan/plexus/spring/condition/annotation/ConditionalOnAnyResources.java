@@ -38,5 +38,10 @@ import org.springframework.context.annotation.Conditional;
 @Conditional(value = OnAnyResourcesCondition.class)
 @SuppressWarnings("unused")
 public @interface ConditionalOnAnyResources {
+    /**
+     * The nested {@link ConditionalOnResource} conditions of which at least one must match.
+     *
+     * @return the nested conditions to evaluate
+     */
     ConditionalOnResource[] value();
 }

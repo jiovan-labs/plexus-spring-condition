@@ -37,5 +37,10 @@ import com.jiovan.plexus.spring.condition.evaluator.OnAllFilesCondition;
 @Conditional(value = OnAllFilesCondition.class)
 @SuppressWarnings("unused")
 public @interface ConditionalOnAllFiles {
+    /**
+     * The nested {@link ConditionalOnFile} conditions that must all match.
+     *
+     * @return the nested conditions to evaluate
+     */
     ConditionalOnFile[] value();
 }

@@ -38,5 +38,10 @@ import org.springframework.context.annotation.Conditional;
 @Conditional(value = OnMissingAllBeansCondition.class)
 @SuppressWarnings("unused")
 public @interface ConditionalOnMissingAllBeans {
+    /**
+     * The nested {@link ConditionalOnMissingBean} conditions that must all match.
+     *
+     * @return the nested conditions to evaluate
+     */
     ConditionalOnMissingBean[] value();
 }

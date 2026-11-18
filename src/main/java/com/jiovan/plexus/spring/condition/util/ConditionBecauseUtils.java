@@ -33,21 +33,45 @@ public abstract class ConditionBecauseUtils {
     private static final String MISSING_ATTRIBUTE = "annotation attribute '%s' is missing or empty";    // $NON-NLS-1$
     private static final String ILLEGAL_ATTRIBUTE = "annotation attribute '%s' is illegal";    // $NON-NLS-1$
 
+    /**
+     * Returns the reason message for empty attributes of the given annotation type.
+     *
+     * @param annotation the annotation type
+     * @return the formatted reason message
+     */
     @Nonnull
     public static String emptyAttributes(@Nonnull Class<? extends Annotation> annotation) {
         return emptyAttributes(ClassUtils.getQualifiedName(annotation));
     }
 
+    /**
+     * Returns the reason message for empty attributes of the named annotation type.
+     *
+     * @param className the qualified annotation class name
+     * @return the formatted reason message
+     */
     @Nonnull
     public static String emptyAttributes(@Nonnull String className) {
         return String.format(EMPTY_ATTRIBUTES, className);
     }
 
+    /**
+     * Returns the reason message for a missing or empty annotation attribute.
+     *
+     * @param attribute the name of the annotation attribute
+     * @return the formatted reason message
+     */
     @Nonnull
     public static String missingAttribute(@Nonnull String attribute) {
         return String.format(MISSING_ATTRIBUTE, attribute);
     }
 
+    /**
+     * Returns the reason message for an illegal annotation attribute.
+     *
+     * @param attribute the name of the annotation attribute
+     * @return the formatted reason message
+     */
     @Nonnull
     public static String illegalAttribute(@Nonnull String attribute) {
         return String.format(ILLEGAL_ATTRIBUTE, attribute);

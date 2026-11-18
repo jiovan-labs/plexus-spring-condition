@@ -46,6 +46,13 @@ import com.jiovan.plexus.spring.condition.util.ConditionBecauseUtils;
 public class OnMissingResourceCondition extends SpringBootCondition {
     private static final Class<? extends Annotation> annotation = ConditionalOnMissingResource.class;
 
+    /**
+     * Determines whether the condition declared by {@link ConditionalOnMissingResource} matches the given metadata.
+     *
+     * @param context the condition context providing the environment and bean factory
+     * @param metadata the metadata of the annotated class or method being evaluated
+     * @return the outcome of the condition evaluation
+     */
     @Nonnull
     @Override
     public ConditionOutcome getMatchOutcome(@Nonnull ConditionContext context, @Nonnull AnnotatedTypeMetadata metadata) {

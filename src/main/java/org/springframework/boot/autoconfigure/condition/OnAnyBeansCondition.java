@@ -34,6 +34,13 @@ import com.jiovan.plexus.spring.condition.evaluator.AbstractArrayWrapCondition;
 @Order(value = Ordered.LOWEST_PRECEDENCE - 1000)
 @SuppressWarnings("unused")
 public class OnAnyBeansCondition extends AbstractArrayWrapCondition<ConditionalOnAnyBeans, ConditionalOnBean> {
+    /**
+     * Matches when at least one nested condition matches.
+     *
+     * @param matched the messages of the nested conditions that matched
+     * @param unmatched the messages of the nested conditions that did not match
+     * @return a match outcome when something is matched, otherwise a no-match outcome
+     */
     @Nonnull
     @Override
     protected ConditionOutcome determineOutcome(@Nonnull List<ConditionMessage> matched, @Nonnull List<ConditionMessage> unmatched) {

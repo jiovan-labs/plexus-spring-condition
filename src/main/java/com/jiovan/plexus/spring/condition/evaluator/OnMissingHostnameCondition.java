@@ -46,6 +46,13 @@ import com.jiovan.plexus.spring.condition.util.ConditionOutcomeUtils;
 public class OnMissingHostnameCondition extends SpringBootCondition {
     private static final Class<? extends Annotation> annotation = ConditionalOnMissingHostname.class;
 
+    /**
+     * Determines whether the condition declared by {@link ConditionalOnMissingHostname} matches the given metadata.
+     *
+     * @param context the condition context providing the environment and bean factory
+     * @param metadata the metadata of the annotated class or method being evaluated
+     * @return the outcome of the condition evaluation
+     */
     @Nonnull
     @Override
     @SuppressWarnings("DuplicatedCode")

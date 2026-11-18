@@ -28,6 +28,12 @@ import org.springframework.boot.autoconfigure.condition.ConditionOutcome;
  */
 @SuppressWarnings("unused")
 public abstract class ConditionOutcomeUtils {
+    /**
+     * Returns an outcome with the match flag inverted and the original message preserved.
+     *
+     * @param outcome the outcome to invert
+     * @return the inverted outcome
+     */
     @Nonnull
     public static ConditionOutcome inverse(@Nonnull ConditionOutcome outcome) {
         return new ConditionOutcome(!outcome.isMatch(), outcome.getConditionMessage());

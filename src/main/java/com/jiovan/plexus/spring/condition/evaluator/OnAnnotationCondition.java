@@ -50,6 +50,13 @@ import com.jiovan.plexus.spring.toolkit.support.ClassPathScanningSimpleComponent
 public class OnAnnotationCondition extends SpringBootCondition {
     private static final Class<? extends Annotation> annotation = ConditionalOnAnnotation.class;
 
+    /**
+     * Determines whether the condition declared by {@link ConditionalOnAnnotation} matches the given metadata.
+     *
+     * @param context the condition context providing the environment and bean factory
+     * @param metadata the metadata of the annotated class or method being evaluated
+     * @return the outcome of the condition evaluation
+     */
     @Nonnull
     @Override
     @SuppressWarnings("unchecked")

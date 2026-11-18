@@ -38,5 +38,10 @@ import org.springframework.context.annotation.Conditional;
 @Conditional(value = OnMissingAnyClassesCondition.class)
 @SuppressWarnings("unused")
 public @interface ConditionalOnMissingAnyClasses {
+    /**
+     * The nested {@link ConditionalOnMissingClass} conditions of which at least one must match.
+     *
+     * @return the nested conditions to evaluate
+     */
     ConditionalOnMissingClass[] value();
 }

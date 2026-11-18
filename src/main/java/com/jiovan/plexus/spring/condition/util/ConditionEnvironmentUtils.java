@@ -35,6 +35,17 @@ import com.jiovan.plexus.common.toolkit.util.StringUtilsWraps;
  */
 @SuppressWarnings("unused")
 public abstract class ConditionEnvironmentUtils {
+    /**
+     * Evaluates an environment variable against an expected value, optionally as a regular expression.
+     *
+     * @param conditionClass the annotation class declaring the condition
+     * @param attributeName the name of the annotation attribute being checked
+     * @param environmentName the name of the environment variable to read
+     * @param havingValue the expected value or regular expression
+     * @param caseSensitive whether the comparison is case sensitive
+     * @param regex whether the expected value is a regular expression
+     * @return an outcome indicating whether the environment variable matches the expected value
+     */
     @Nonnull
     @SuppressWarnings("DuplicatedCode")
     public static ConditionOutcome matchEnvironment(@Nonnull Class<? extends Annotation> conditionClass, @Nonnull String attributeName, @Nonnull String environmentName, @Nullable String havingValue, boolean caseSensitive, boolean regex) {

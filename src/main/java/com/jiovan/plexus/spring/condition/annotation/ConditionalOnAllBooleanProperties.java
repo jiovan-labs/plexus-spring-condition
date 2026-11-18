@@ -38,5 +38,10 @@ import org.springframework.context.annotation.Conditional;
 @Conditional(value = OnAllBooleanPropertiesCondition.class)
 @SuppressWarnings("unused")
 public @interface ConditionalOnAllBooleanProperties {
+    /**
+     * The nested {@link ConditionalOnBooleanProperty} conditions that must all match.
+     *
+     * @return the nested conditions to evaluate
+     */
     ConditionalOnBooleanProperty[] value();
 }

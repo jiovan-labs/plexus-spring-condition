@@ -37,5 +37,10 @@ import com.jiovan.plexus.spring.condition.evaluator.OnMissingAnyLibrariesConditi
 @Conditional(value = OnMissingAnyLibrariesCondition.class)
 @SuppressWarnings("unused")
 public @interface ConditionalOnMissingAnyLibraries {
+    /**
+     * The nested {@link ConditionalOnMissingLibrary} conditions of which at least one must match.
+     *
+     * @return the nested conditions to evaluate
+     */
     ConditionalOnMissingLibrary[] value();
 }

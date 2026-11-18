@@ -37,5 +37,10 @@ import com.jiovan.plexus.spring.condition.evaluator.OnAnyPortsCondition;
 @Conditional(value = OnAnyPortsCondition.class)
 @SuppressWarnings("unused")
 public @interface ConditionalOnAnyPorts {
+    /**
+     * The nested {@link ConditionalOnPort} conditions of which at least one must match.
+     *
+     * @return the nested conditions to evaluate
+     */
     ConditionalOnPort[] value();
 }

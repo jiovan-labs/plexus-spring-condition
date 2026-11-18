@@ -37,5 +37,10 @@ import com.jiovan.plexus.spring.condition.evaluator.OnAnyPackagesCondition;
 @Conditional(value = OnAnyPackagesCondition.class)
 @SuppressWarnings("unused")
 public @interface ConditionalOnAnyPackages {
+    /**
+     * The nested {@link ConditionalOnPackage} conditions of which at least one must match.
+     *
+     * @return the nested conditions to evaluate
+     */
     ConditionalOnPackage[] value();
 }

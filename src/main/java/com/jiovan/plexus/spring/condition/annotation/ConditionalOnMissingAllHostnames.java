@@ -37,5 +37,10 @@ import com.jiovan.plexus.spring.condition.evaluator.OnMissingAllHostnamesConditi
 @Conditional(value = OnMissingAllHostnamesCondition.class)
 @SuppressWarnings("unused")
 public @interface ConditionalOnMissingAllHostnames {
+    /**
+     * The nested {@link ConditionalOnMissingHostname} conditions that must all match.
+     *
+     * @return the nested conditions to evaluate
+     */
     ConditionalOnMissingHostname[] value();
 }

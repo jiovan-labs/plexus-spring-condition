@@ -37,5 +37,10 @@ import com.jiovan.plexus.spring.condition.evaluator.OnAnyIpAddressesCondition;
 @Conditional(value = OnAnyIpAddressesCondition.class)
 @SuppressWarnings("unused")
 public @interface ConditionalOnAnyIpAddresses {
+    /**
+     * The nested {@link ConditionalOnIpAddress} conditions of which at least one must match.
+     *
+     * @return the nested conditions to evaluate
+     */
     ConditionalOnIpAddress[] value();
 }

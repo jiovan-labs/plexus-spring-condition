@@ -37,5 +37,10 @@ import com.jiovan.plexus.spring.condition.evaluator.OnMissingAllEnvironmentsCond
 @Conditional(value = OnMissingAllEnvironmentsCondition.class)
 @SuppressWarnings("unused")
 public @interface ConditionalOnMissingAllEnvironments {
+    /**
+     * The nested {@link ConditionalOnMissingEnvironment} conditions that must all match.
+     *
+     * @return the nested conditions to evaluate
+     */
     ConditionalOnMissingEnvironment[] value();
 }

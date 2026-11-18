@@ -38,5 +38,10 @@ import org.springframework.context.annotation.Conditional;
 @Conditional(value = OnAnySingleCandidatesCondition.class)
 @SuppressWarnings("unused")
 public @interface ConditionalOnAnySingleCandidates {
+    /**
+     * The nested {@link ConditionalOnSingleCandidate} conditions of which at least one must match.
+     *
+     * @return the nested conditions to evaluate
+     */
     ConditionalOnSingleCandidate[] value();
 }

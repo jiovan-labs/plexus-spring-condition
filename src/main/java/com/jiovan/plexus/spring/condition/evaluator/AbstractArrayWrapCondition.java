@@ -59,6 +59,9 @@ public abstract class AbstractArrayWrapCondition<W extends Annotation, P extends
     private final Class<W> wrapperType;
     private final Class<P> primitiveType;
 
+    /**
+     * Resolves the wrapper and primitive annotation types from the generic parameters of the concrete condition.
+     */
     @SuppressWarnings("unchecked")
     public AbstractArrayWrapCondition() {
         wrapperType = (Class<W>) TypeUtilsWraps.getGenericParameterClass(getClass(), 0);
@@ -67,6 +70,13 @@ public abstract class AbstractArrayWrapCondition<W extends Annotation, P extends
         Assert.notNull(primitiveType, AssertMessageConst.NOT_NULL);
     }
 
+    /**
+     * Evaluates every nested primitive condition declared by the wrapper annotation and combines their outcomes.
+     *
+     * @param context the condition context providing the environment and bean factory
+     * @param metadata the metadata of the annotated class or method being evaluated
+     * @return the combined outcome of the nested conditions
+     */
     @Nonnull
     @Override
     public ConditionOutcome getMatchOutcome(@Nonnull ConditionContext context, @Nonnull AnnotatedTypeMetadata metadata) {
@@ -105,9 +115,21 @@ public abstract class AbstractArrayWrapCondition<W extends Annotation, P extends
         return determineOutcome(matched, unmatched);
     }
 
+    /**
+     * Combines the outcomes of the nested conditions into a single result.
+     *
+     * @param matched the messages of the nested conditions that matched
+     * @param unmatched the messages of the nested conditions that did not match
+     * @return the combined outcome
+     */
     @Nonnull
     protected abstract ConditionOutcome determineOutcome(@Nonnull List<ConditionMessage> matched, @Nonnull List<ConditionMessage> unmatched);
 
+    /**
+     * Instantiates the primitive conditions declared by {@link org.springframework.context.annotation.Conditional} on the primitive annotation type.
+     *
+     * @return the primitive conditions, or {@code null} if none are declared
+     */
     protected List<SpringBootCondition> primitiveConditions() {
         Conditional conditional = AnnotationUtils.getAnnotation(primitiveType, Conditional.class);
         if (conditional == null || ArrayUtils.isEmpty(conditional.value())) {
@@ -121,6 +143,11 @@ public abstract class AbstractArrayWrapCondition<W extends Annotation, P extends
         return CollectionUtils.isEmpty(result) ? null : result;
     }
 
+    /**
+     * Returns the name of the wrapper attribute that holds the nested primitive conditions.
+     *
+     * @return the wrapper attribute name
+     */
     protected String wrapperAttribute() {
         return WRAPPER_ATTRIBUTE;
     }
