@@ -1,0 +1,24 @@
+{
+    "properties": [
+        {
+            "name": "mock.condition.enabled",
+            "type": "java.lang.String",
+            "description": "Test property used to enable property and expression conditions."
+        },
+        {
+            "name": "mock.condition.mode",
+            "type": "java.lang.String",
+            "description": "Test property used to verify string value matching."
+        },
+        {
+            "name": "mock.condition.flag",
+            "type": "java.lang.String",
+            "description": "Test property used to verify boolean property conditions."
+        },
+        {
+            "name": "mock.condition.disabled",
+            "type": "java.lang.String",
+            "description": "Test property used to verify false-valued conditions."
+        }
+    ]
+}

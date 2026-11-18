@@ -22,17 +22,71 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 import com.jiovan.plexus.common.toolkit.constant.AssertMessageConst;
 import com.jiovan.plexus.spring.toolkit.util.BeanFactoryWraps;
 
 
-@SpringBootTest(classes = {MockApplicationInitializer.class, MockApplicationConfiguration.class}, webEnvironment = SpringBootTest.WebEnvironment.NONE)
+@SpringBootTest(classes = {MockApplicationInitializer.class, MockApplicationConfiguration.class}, properties = {
+    "mock.condition.enabled=true",
+    "mock.condition.mode=on",
+    "mock.condition.flag=true",
+    "mock.condition.disabled=false"
+}, webEnvironment = SpringBootTest.WebEnvironment.NONE)
+@ActiveProfiles("mock")
 class MockApplicationTest {
     @Autowired
     private BeanFactory beanFactory;
 
     @Test
     void conditionalOnAllClasses() {
-        Assertions.assertNotNull(BeanFactoryWraps.getBean(beanFactory, MockApplicationConfiguration.CONDITIONAL_ON_ALL_CLASSES_BEAN), AssertMessageConst.NOT_NULL);
+        assertBeanPresent(MockApplicationConfiguration.CONDITIONAL_ON_ALL_CLASSES_BEAN);
+    }
+
+    @Test
+    void conditionalOnProperties() {
+        assertBeanPresent(MockApplicationConfiguration.CONDITIONAL_ON_ALL_PROPERTIES_BEAN);
+        assertBeanAbsent(MockApplicationConfiguration.CONDITIONAL_ON_ALL_PROPERTIES_MISMATCH_BEAN);
+        assertBeanPresent(MockApplicationConfiguration.CONDITIONAL_ON_ANY_PROPERTIES_BEAN);
+        assertBeanAbsent(MockApplicationConfiguration.CONDITIONAL_ON_ANY_PROPERTIES_MISMATCH_BEAN);
+    }
+
+    @Test
+    void conditionalOnMissingProperties() {
+        assertBeanPresent(MockApplicationConfiguration.CONDITIONAL_ON_MISSING_ALL_PROPERTIES_BEAN);
+        assertBeanAbsent(MockApplicationConfiguration.CONDITIONAL_ON_MISSING_ALL_PROPERTIES_MISMATCH_BEAN);
+    }
+
+    @Test
+    void conditionalOnBooleanProperties() {
+        assertBeanPresent(MockApplicationConfiguration.CONDITIONAL_ON_ALL_BOOLEAN_PROPERTIES_BEAN);
+        assertBeanAbsent(MockApplicationConfiguration.CONDITIONAL_ON_ALL_BOOLEAN_PROPERTIES_MISMATCH_BEAN);
+    }
+
+    @Test
+    void conditionalOnExpressions() {
+        assertBeanPresent(MockApplicationConfiguration.CONDITIONAL_ON_EXPRESSIONS_BEAN);
+        assertBeanAbsent(MockApplicationConfiguration.CONDITIONAL_ON_EXPRESSIONS_MISMATCH_BEAN);
+    }
+
+    @Test
+    void conditionalOnClasses() {
+        assertBeanPresent(MockApplicationConfiguration.CONDITIONAL_ON_CLASSES_BEAN);
+        assertBeanPresent(MockApplicationConfiguration.CONDITIONAL_ON_MISSING_ALL_CLASSES_BEAN);
+        assertBeanAbsent(MockApplicationConfiguration.CONDITIONAL_ON_CLASSES_MISMATCH_BEAN);
+    }
+
+    @Test
+    void conditionalOnActiveProfile() {
+        assertBeanPresent(MockApplicationConfiguration.CONDITIONAL_ON_ACTIVE_PROFILE_BEAN);
+        assertBeanAbsent(MockApplicationConfiguration.CONDITIONAL_ON_ACTIVE_PROFILE_MISMATCH_BEAN);
+    }
+
+    private void assertBeanPresent(String beanName) {
+        Assertions.assertNotNull(BeanFactoryWraps.getBean(beanFactory, beanName), AssertMessageConst.NOT_NULL);
+    }
+
+    private void assertBeanAbsent(String beanName) {
+        Assertions.assertNull(BeanFactoryWraps.getBean(beanFactory, beanName), AssertMessageConst.IS_NULL);
     }
 }
