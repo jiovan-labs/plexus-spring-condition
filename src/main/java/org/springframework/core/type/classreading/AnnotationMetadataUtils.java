@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Unikue Ltd. All rights reserved.
+ * Copyright (c) 2024 Jiovan Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ import org.springframework.core.type.AnnotationMetadata;
 import org.springframework.core.type.ClassMetadataUtils;
 import org.springframework.core.type.MethodMetadata;
 import org.springframework.core.type.StandardAnnotationMetadata;
-import cn.unikue.commonplexus.javaseutil.util.ArrayUtilsWraps;
+import com.jiovan.plexus.common.toolkit.util.ArrayUtilsWraps;
 
 
 /**

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Unikue Ltd. All rights reserved.
+ * Copyright (c) 2021 Jiovan Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ import org.springframework.core.type.classreading.AnnotationMetadataUtils;
 import org.springframework.util.Assert;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
-import cn.unikue.commonplexus.springcondition.annotation.ConditionalOnMultipleCandidates;
+import com.jiovan.plexus.spring.condition.annotation.ConditionalOnMultipleCandidates;
 
 
 /**
@@ -47,6 +47,7 @@ import cn.unikue.commonplexus.springcondition.annotation.ConditionalOnMultipleCa
 public class OnMultipleCandidatesCondition extends SpringBootCondition {
     private static final Class<? extends Annotation> annotation = ConditionalOnMultipleCandidates.class;
 
+    @Nonnull
     @Override
     public ConditionOutcome getMatchOutcome(@Nonnull ConditionContext context, @Nonnull AnnotatedTypeMetadata metadata) {
         ConditionMessage.Builder builder = ConditionMessage.forCondition(annotation);

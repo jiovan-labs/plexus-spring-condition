@@ -1,17 +1,18 @@
 # Plexus Spring Condition
 
-Unikue plexus-spring-condition is a package of powerful condition annotations for Spring.
+Jiovan plexus-spring-condition is a package of powerful condition annotations for Spring.
 
 ## Quickstart
 
 - Import dependencies
 
 ```xml
-    <dependency>
-        <groupId>cn.unikue.commonplexus</groupId>
-        <artifactId>plexus-spring-condition</artifactId>
-        <version>LATEST</version>
-    </dependency>
+
+<dependency>
+  <groupId>com.jiovan.plexus</groupId>
+  <artifactId>plexus-spring-condition</artifactId>
+  <version>LATEST</version>
+</dependency>
 ```
 
 - General conditions:
@@ -100,7 +101,7 @@ Unikue plexus-spring-condition is a package of powerful condition annotations fo
 
 ## Document
 
-- Github: https://github.com/unikueltd/plexus-spring-condition
+- Github: https://github.com/jiovan-labs/plexus-spring-condition
 
 ## Requirement
 
@@ -114,12 +115,12 @@ See the `NOTICE.txt` file for required notices and attributions.
 
 ## Donation
 
-You like this package? Then [donate to us](https://unikue.cn/donation) to support the development.
+You like this package? Then [donate to us](https://jiovan.com/donation) to support the development.
 
 ## Copyright
 
-Beijing Unikue Network Technology Ltd.
+Beijing Jiovan Technology Ltd.
 
 ## Website
 
-- Unikue: https://unikue.cn
+- Jiovan: https://jiovan.com

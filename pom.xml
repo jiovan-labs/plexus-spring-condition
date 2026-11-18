@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- * Copyright (c) 2021 Unikue Ltd. All rights reserved.
+ * Copyright (c) 2021 Jiovan Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,18 +20,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cn.unikue.commonplexus</groupId>
+    <groupId>com.jiovan.plexus</groupId>
     <artifactId>plexus-spring-condition</artifactId>
-    <version>3.5.15</version>
+    <version>4.1.0</version>
 
     <name>${project.artifactId}</name>
     <description>Plexus Spring Condition provides many easy-to-use conditions for Spring</description>
-    <url>https://github.com/unikueltd/plexus-spring-condition</url>
+    <url>https://github.com/jiovan-labs/plexus-spring-condition</url>
     <inceptionYear>2021</inceptionYear>
 
     <organization>
-        <name>Unikue Ltd</name>
-        <url>https://unikue.cn</url>
+        <name>Jiovan Ltd</name>
+        <url>https://jiovan.com</url>
     </organization>
 
     <properties>
@@ -47,20 +47,19 @@
         <project.build.resourceEncoding>${file.encoding}</project.build.resourceEncoding>
         <project.reporting.outputEncoding>${file.encoding}</project.reporting.outputEncoding>
 
-        <spring-boot.version>3.5.15</spring-boot.version>
+        <spring-boot.version>4.1.0</spring-boot.version>
 
-        <plexus-spring-util.version>3.5.15</plexus-spring-util.version>
+        <plexus-spring-toolkit.version>4.1.0</plexus-spring-toolkit.version>
 
-        <javadoc-docent-maven-plugin.version>2.1.2</javadoc-docent-maven-plugin.version>
-        <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
+        <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
         <maven-install-plugin.version>3.1.4</maven-install-plugin.version>
-        <maven-jar-plugin.version>3.4.2</maven-jar-plugin.version>
-        <maven-javadoc-plugin.version>3.11.3</maven-javadoc-plugin.version>
-        <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
-        <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
+        <maven-jar-plugin.version>3.5.0</maven-jar-plugin.version>
+        <maven-javadoc-plugin.version>3.12.0</maven-javadoc-plugin.version>
+        <maven-resources-plugin.version>3.5.0</maven-resources-plugin.version>
+        <maven-source-plugin.version>3.4.0</maven-source-plugin.version>
         <maven-surefire-plugin.version>3.5.6</maven-surefire-plugin.version>
         <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
-        <central-publishing-maven-plugin.version>0.11.0</central-publishing-maven-plugin.version>
+        <central-publishing-maven-plugin.version>0.12.0</central-publishing-maven-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -88,9 +87,9 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>cn.unikue.commonplexus</groupId>
-            <artifactId>plexus-spring-util</artifactId>
-            <version>${plexus-spring-util.version}</version>
+            <groupId>com.jiovan.plexus</groupId>
+            <artifactId>plexus-spring-toolkit</artifactId>
+            <version>${plexus-spring-toolkit.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.springframework.boot</groupId>
@@ -261,16 +260,6 @@
                     <links>
                         <link>https://docs.spring.io/spring-framework/docs/current/javadoc-api</link>
                     </links>
-                    <taglets>
-                        <taglet>
-                            <tagletClass>cn.unikue.mavenplugin.javadocdocent.taglet.ReferenceTaglet</tagletClass>
-                        </taglet>
-                    </taglets>
-                    <tagletArtifact>
-                        <groupId>cn.unikue.mavenplugin</groupId>
-                        <artifactId>javadoc-docent-maven-plugin</artifactId>
-                        <version>${javadoc-docent-maven-plugin.version}</version>
-                    </tagletArtifact>
                 </configuration>
                 <executions>
                     <execution>
@@ -364,14 +353,14 @@
     </build>
 
     <scm>
-        <url>https://github.com/unikueltd/plexus-spring-condition</url>
-        <connection>scm:git:https://github.com/unikueltd/plexus-spring-condition.git</connection>
-        <developerConnection>scm:git:https://github.com/unikueltd/plexus-spring-condition.git</developerConnection>
+        <url>https://github.com/jiovan-labs/plexus-spring-condition</url>
+        <connection>scm:git:https://github.com/jiovan-labs/plexus-spring-condition.git</connection>
+        <developerConnection>scm:git:https://github.com/jiovan-labs/plexus-spring-condition.git</developerConnection>
     </scm>
 
     <issueManagement>
         <system>Github</system>
-        <url>https://github.com/unikueltd/plexus-spring-condition/issues</url>
+        <url>https://github.com/jiovan-labs/plexus-spring-condition/issues</url>
     </issueManagement>
 
     <licenses>
@@ -384,7 +373,7 @@
 
     <developers>
         <developer>
-            <name>Unikue Ltd</name>
+            <name>Jiovan Ltd</name>
         </developer>
         <developer>
             <id>davidhsing</id>
@@ -396,8 +385,8 @@
             <roles>
                 <role>developer</role>
             </roles>
-            <organization>Unikue Ltd</organization>
-            <organizationUrl>https://unikue.cn</organizationUrl>
+            <organization>Jiovan Ltd</organization>
+            <organizationUrl>https://jiovan.com</organizationUrl>
             <timezone>China/Beijing</timezone>
         </developer>
     </developers>
