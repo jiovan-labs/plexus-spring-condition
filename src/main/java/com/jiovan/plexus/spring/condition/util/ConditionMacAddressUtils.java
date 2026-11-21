@@ -42,6 +42,7 @@ public abstract class ConditionMacAddressUtils {
      * @param attributeName the name of the annotation attribute being checked
      * @param macAddress the expected MAC address or regular expression
      * @param regex whether the expected value is a regular expression
+     *
      * @return an outcome indicating whether any local MAC address matches the expected value
      */
     @Nonnull

@@ -48,6 +48,7 @@ public abstract class MethodMetadataUtils {
      * @param returnTypeName the name of the return type
      * @param source the source object of the metadata
      * @param annotations the merged annotations to apply
+     *
      * @return the newly created method metadata
      */
     @Nonnull
@@ -61,7 +62,9 @@ public abstract class MethodMetadataUtils {
      *
      * @param metadata the original method metadata
      * @param annotations the merged annotations to apply
+     *
      * @return the copied method metadata with the new annotations, or {@code null} if it cannot be created
+     *
      * @throws IllegalAccessException if a required internal field cannot be accessed
      */
     @Nullable
@@ -74,7 +77,9 @@ public abstract class MethodMetadataUtils {
      *
      * @param metadata the original method metadata
      * @param annotations the merged annotations to apply
+     *
      * @return the copied method metadata with the new annotations, or {@code null} if it cannot be created
+     *
      * @throws IllegalAccessException if a required internal field cannot be accessed
      */
     @Nullable
@@ -97,6 +102,7 @@ public abstract class MethodMetadataUtils {
      *
      * @param metadata the original method metadata
      * @param annotations the merged annotations to apply
+     *
      * @return the copied method metadata with the new annotations, or {@code null} if it cannot be created
      */
     @Nullable
@@ -109,6 +115,7 @@ public abstract class MethodMetadataUtils {
      *
      * @param metadata the original method metadata
      * @param annotations the merged annotations to apply
+     *
      * @return the copied method metadata with the new annotations, or {@code null} if it cannot be created
      */
     @Nullable

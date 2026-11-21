@@ -42,6 +42,7 @@ public abstract class ConditionIpAddressUtils {
      * @param attributeName the name of the annotation attribute being checked
      * @param ipAddress the expected IP address or regular expression
      * @param regex whether the expected value is a regular expression
+     *
      * @return an outcome indicating whether the local IP address matches the expected value
      */
     @Nonnull

@@ -44,6 +44,7 @@ public abstract class ConditionEnvironmentUtils {
      * @param havingValue the expected value or regular expression
      * @param caseSensitive whether the comparison is case sensitive
      * @param regex whether the expected value is a regular expression
+     *
      * @return an outcome indicating whether the environment variable matches the expected value
      */
     @Nonnull

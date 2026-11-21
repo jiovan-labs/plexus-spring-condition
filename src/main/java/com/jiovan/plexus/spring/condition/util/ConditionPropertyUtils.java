@@ -46,6 +46,7 @@ public abstract class ConditionPropertyUtils {
      *
      * @param metadata the metadata of the annotated class or method
      * @param condition the annotation declaring the prefix and name attributes
+     *
      * @return the combined property names, or {@code null} if no attributes are present
      */
     @Nullable
@@ -59,6 +60,7 @@ public abstract class ConditionPropertyUtils {
      *
      * @param metadata The metadata of the {@link org.springframework.core.type.AnnotationMetadata class} or {@link org.springframework.core.type.MethodMetadata method} being checked
      * @param condition Annotation which has 'prefix' and 'name' attributes
+     *
      * @return The extracted string list of evaluator annotation with 'prefix' and 'name' attributes, join with '.'
      */
     @Nullable

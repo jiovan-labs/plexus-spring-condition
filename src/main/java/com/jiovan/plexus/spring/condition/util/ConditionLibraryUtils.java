@@ -45,6 +45,7 @@ public abstract class ConditionLibraryUtils {
      * @param libraryName the expected library name or regular expression
      * @param caseSensitive whether the comparison is case sensitive
      * @param regex whether the expected value is a regular expression
+     *
      * @return an outcome indicating whether any loaded library matches the expected value
      */
     @Nonnull

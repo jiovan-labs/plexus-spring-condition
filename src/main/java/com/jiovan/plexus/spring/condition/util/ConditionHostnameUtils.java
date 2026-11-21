@@ -42,6 +42,7 @@ public abstract class ConditionHostnameUtils {
      * @param hostname the expected host name or regular expression
      * @param caseSensitive whether the comparison is case sensitive
      * @param regex whether the expected value is a regular expression
+     *
      * @return an outcome indicating whether the local host name matches the expected value
      */
     @Nonnull

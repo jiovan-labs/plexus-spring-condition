@@ -37,6 +37,7 @@ public class AbstractMatchAnyCondition<W extends Annotation, P extends Annotatio
      *
      * @param matched the messages of the nested conditions that matched
      * @param unmatched the messages of the nested conditions that did not match
+     *
      * @return a match outcome when something is matched, otherwise a no-match outcome
      */
     @Nonnull

@@ -75,6 +75,7 @@ public abstract class AbstractArrayWrapCondition<W extends Annotation, P extends
      *
      * @param context the condition context providing the environment and bean factory
      * @param metadata the metadata of the annotated class or method being evaluated
+     *
      * @return the combined outcome of the nested conditions
      */
     @Nonnull
@@ -120,6 +121,7 @@ public abstract class AbstractArrayWrapCondition<W extends Annotation, P extends
      *
      * @param matched the messages of the nested conditions that matched
      * @param unmatched the messages of the nested conditions that did not match
+     *
      * @return the combined outcome
      */
     @Nonnull

@@ -55,6 +55,7 @@ public abstract class AnnotationMetadataUtils {
      * @param memberClassNames the names of the member classes
      * @param declaredMethods the metadata of the declared methods
      * @param annotations the merged annotations to apply
+     *
      * @return the newly created class metadata
      */
     @Nonnull
@@ -68,7 +69,9 @@ public abstract class AnnotationMetadataUtils {
      *
      * @param metadata the original class metadata
      * @param annotations the merged annotations to apply
+     *
      * @return the copied class metadata with the new annotations, or {@code null} if it cannot be created
+     *
      * @throws IllegalAccessException if a required internal field cannot be accessed
      */
     @Nullable
@@ -81,7 +84,9 @@ public abstract class AnnotationMetadataUtils {
      *
      * @param metadata the original class metadata
      * @param annotations the merged annotations to apply
+     *
      * @return the copied class metadata with the new annotations, or {@code null} if it cannot be created
+     *
      * @throws IllegalAccessException if a required internal field cannot be accessed
      */
     @Nullable
@@ -108,6 +113,7 @@ public abstract class AnnotationMetadataUtils {
      *
      * @param metadata the original class metadata
      * @param annotations the merged annotations to apply
+     *
      * @return the copied class metadata with the new annotations, or {@code null} if it cannot be created
      */
     @Nullable
@@ -120,6 +126,7 @@ public abstract class AnnotationMetadataUtils {
      *
      * @param metadata the original class metadata
      * @param annotations the merged annotations to apply
+     *
      * @return the copied class metadata with the new annotations, or {@code null} if it cannot be created
      */
     @Nullable

@@ -35,6 +35,7 @@ public abstract class StandardMethodMetadataUtils {
      *
      * @param introspectedMethod the method to introspect
      * @param nestedAnnotationsAsMap whether nested annotations are exposed as maps
+     *
      * @return the newly created method metadata
      */
     @Nonnull

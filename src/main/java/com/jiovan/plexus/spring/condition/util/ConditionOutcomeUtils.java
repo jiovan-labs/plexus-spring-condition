@@ -32,6 +32,7 @@ public abstract class ConditionOutcomeUtils {
      * Returns an outcome with the match flag inverted and the original message preserved.
      *
      * @param outcome the outcome to invert
+     *
      * @return the inverted outcome
      */
     @Nonnull

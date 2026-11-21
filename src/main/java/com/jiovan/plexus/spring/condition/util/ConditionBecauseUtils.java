@@ -37,6 +37,7 @@ public abstract class ConditionBecauseUtils {
      * Returns the reason message for empty attributes of the given annotation type.
      *
      * @param annotation the annotation type
+     *
      * @return the formatted reason message
      */
     @Nonnull
@@ -48,6 +49,7 @@ public abstract class ConditionBecauseUtils {
      * Returns the reason message for empty attributes of the named annotation type.
      *
      * @param className the qualified annotation class name
+     *
      * @return the formatted reason message
      */
     @Nonnull
@@ -59,6 +61,7 @@ public abstract class ConditionBecauseUtils {
      * Returns the reason message for a missing or empty annotation attribute.
      *
      * @param attribute the name of the annotation attribute
+     *
      * @return the formatted reason message
      */
     @Nonnull
@@ -70,6 +73,7 @@ public abstract class ConditionBecauseUtils {
      * Returns the reason message for an illegal annotation attribute.
      *
      * @param attribute the name of the annotation attribute
+     *
      * @return the formatted reason message
      */
     @Nonnull

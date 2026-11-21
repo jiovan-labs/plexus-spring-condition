@@ -35,6 +35,7 @@ public abstract class ClassMetadataUtils {
      * Introspects the given class and returns its standard annotation metadata.
      *
      * @param introspectedClass the class to introspect
+     *
      * @return the standard annotation metadata, or {@code null} if introspection does not produce it
      */
     @Nullable
@@ -47,6 +48,7 @@ public abstract class ClassMetadataUtils {
      * Creates standard class metadata for the given class.
      *
      * @param introspectedClass the class to introspect
+     *
      * @return the newly created class metadata
      */
     @Nonnull
@@ -59,6 +61,7 @@ public abstract class ClassMetadataUtils {
      * Clones the given metadata by re-creating it from the introspected class.
      *
      * @param metadata the metadata to clone
+     *
      * @return the cloned metadata, or {@code null} if the metadata type is not supported
      */
     @Nullable
